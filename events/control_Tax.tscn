@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpfoi3jabs2v3"]
 
-[ext_resource type="Script" path="res://Scripts/EventScripts/choiceManager.gd" id="1_gcw7x"]
-[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_f6ij5"]
-[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text.gd" id="3_uvytm"]
+[ext_resource type="Script" path="res://src/EventScripts/choiceManager.gd" id="1_gcw7x"]
+[ext_resource type="Theme" path="res://new_theme.tres" id="2_f6ij5"]
+[ext_resource type="Script" path="res://src/EventScripts/outcome_text.gd" id="3_uvytm"]
 
 [node name="TaxRaiseScene" type="Control"]
 layout_mode = 3

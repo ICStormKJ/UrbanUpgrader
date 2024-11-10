@@ -1,3 +1,14 @@
-[gd_scene format=3 uid="uid://do5mcf6lm4fj0"]
+[gd_scene load_steps=4 format=3 uid="uid://dt7gnp6hm1clo"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" path="res://src/GameManager.cs" id="1_dyp64"]
+[ext_resource type="PackedScene" path="res://gui/map.tscn" id="2_i1y51"]
+[ext_resource type="AudioStream" uid="uid://dbhxvtbch8c1s" path="res://assets/audio/city_sounds.mp3" id="3_06fx7"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_dyp64")
+
+[node name="Map" parent="." instance=ExtResource("2_i1y51")]
+
+[node name="Ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_06fx7")
+autoplay = true
