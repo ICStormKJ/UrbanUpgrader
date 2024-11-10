@@ -6,6 +6,34 @@
 [ext_resource type="Texture2D" uid="uid://s3mivqfo1c87" path="res://assets/images/car2.png" id="4_bswpe"]
 [ext_resource type="Texture2D" uid="uid://cc5smqah8pny6" path="res://assets/images/car1.png" id="5_cja3t"]
 
+[sub_resource type="Animation" id="Animation_itba2"]
+length = 2.33334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.33333, 2.33343, 2.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(838, 22), Vector2(842, 11), Vector2(-74, 532), Vector2(557.253, 172.958), Vector2(557.253, 172.958)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.1, 2.33333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(847, 21), Vector2(-82, 523), Vector2(-82, 523)]
+}
+
 [sub_resource type="Animation" id="Animation_urrup"]
 resource_name = "car"
 length = 3.0
@@ -35,33 +63,6 @@ tracks/1/keys = {
 "values": [Vector2(886, 9), Vector2(886, 9), Vector2(794, 38), Vector2(-84, 509)]
 }
 
-[sub_resource type="Animation" id="Animation_itba2"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(692, 96)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Sprite2D2:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(794, 38)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_550o7"]
 _data = {
 "RESET": SubResource("Animation_itba2"),
@@ -86,12 +87,12 @@ libraries = {
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="AnimationPlayer"]
-position = Vector2(794, 38)
+position = Vector2(847, 21)
 texture = ExtResource("4_bswpe")
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
 z_index = 1
-position = Vector2(692, 96)
+position = Vector2(838, 22)
 texture = ExtResource("5_cja3t")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
