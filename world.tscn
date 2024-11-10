@@ -12,3 +12,9 @@ script = ExtResource("1_dyp64")
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_06fx7")
 autoplay = true
+
+[node name="LevelTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="EventTimer" type="Timer" parent="."]
+one_shot = true

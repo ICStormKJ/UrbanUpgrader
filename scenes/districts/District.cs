@@ -7,7 +7,7 @@ public partial class District : Node2D
 
 	public override void _Ready()
 	{
-		Control panel = ResourceLoader.Load<Control>("res;//gui/DistrictPanel");
-		AddChild(panel);
+		//Control panel = ResourceLoader.Load<Control>("res;//gui/DistrictPanel");
+		//AddChild(panel);
 	}
 }
