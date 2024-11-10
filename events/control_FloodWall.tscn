@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch4aago8pkqdx"]
 
 [ext_resource type="Script" path="res://src/EventScripts/flooding.gd" id="1_0tdq1"]
-[ext_resource type="Theme" path="res://new_theme.tres" id="2_r6irm"]
+[ext_resource type="Theme" uid="uid://d0emavip1faky" path="res://new_theme.tres" id="2_r6irm"]
 
 [node name="FloodScene" type="Control"]
 layout_mode = 3
@@ -38,6 +38,7 @@ script = ExtResource("1_0tdq1")
 message = "A storm led to flooding across the city. "
 savedMessage = "Fortunately, with the flood walls you funded, none of the areas suffered major damage."
 reputationMultiplier = 5
+moneyMultiplier = 5000000
 
 [node name="OutcomeText" type="RichTextLabel" parent="Background/ResultPopUp"]
 layout_mode = 1
@@ -74,6 +75,32 @@ offset_left = 211.5
 offset_top = 9.0
 offset_right = 362.5
 offset_bottom = 64.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "AMT"
+
+[node name="MoneyLabel" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 68.0
+offset_right = 202.0
+offset_bottom = 123.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Money"
+
+[node name="MoneyAmt" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 211.5
+offset_top = 69.0
+offset_right = 362.5
+offset_bottom = 124.0
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "AMT"

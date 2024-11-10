@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpfoi3jabs2v3"]
 
 [ext_resource type="Script" path="res://src/EventScripts/choiceManager.gd" id="1_gcw7x"]
-[ext_resource type="Theme" path="res://new_theme.tres" id="2_f6ij5"]
+[ext_resource type="Theme" uid="uid://d0emavip1faky" path="res://new_theme.tres" id="2_f6ij5"]
 [ext_resource type="Script" path="res://src/EventScripts/outcome_text.gd" id="3_uvytm"]
 
 [node name="TaxRaiseScene" type="Control"]
@@ -90,7 +90,7 @@ theme = ExtResource("2_f6ij5")
 script = ExtResource("3_uvytm")
 outcomeDescription = "Raising taxes gets you additional funds, but many of the citizens seem to dislike the changes. "
 repValue = -15
-moneyValue = 5000000
+moneyValue = 10000000
 
 [node name="NoOption" type="ColorRect" parent="Background"]
 layout_mode = 1
