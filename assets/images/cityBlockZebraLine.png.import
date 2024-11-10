@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs1iq6offy1do"
-path="res://.godot/imported/cityBlockDraft.png-dbe12ad99fe3dc2905d31e8614da8d04.ctex"
+uid="uid://fyyfwfrckiig"
+path="res://.godot/imported/cityBlockZebraLine.png-9854b71af665872c2538a6fda9e4647a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cityBlockDraft.png"
-dest_files=["res://.godot/imported/cityBlockDraft.png-dbe12ad99fe3dc2905d31e8614da8d04.ctex"]
+source_file="res://assets/images/cityBlockZebraLine.png"
+dest_files=["res://.godot/imported/cityBlockZebraLine.png-9854b71af665872c2538a6fda9e4647a.ctex"]
 
 [params]
 

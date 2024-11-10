@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt8dnfhaxg04y"]
+[gd_scene load_steps=6 format=3 uid="uid://dt8dnfhaxg04y"]
 
-[ext_resource type="Texture2D" uid="uid://0pjhem8fahlf" path="res://assets/adams.png" id="1_fe774"]
-[ext_resource type="Texture2D" uid="uid://fu2vhlqiy31r" path="res://assets/menu_background.jpg" id="1_py7pn"]
-[ext_resource type="FontFile" uid="uid://bofvluu7ofhv0" path="res://assets/Passion_One/PassionOne-Bold.ttf" id="2_u2s0j"]
+[ext_resource type="Script" path="res://gui/Menu.cs" id="1_1oke3"]
+[ext_resource type="Texture2D" uid="uid://dtg0k0aap7tvp" path="res://assets/images/adams.png" id="1_fe774"]
+[ext_resource type="Texture2D" uid="uid://dfm2rubnhalrb" path="res://assets/images/menu_background.jpg" id="1_py7pn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jhg2"]
 bg_color = Color(0.6, 0.6, 0.6, 0.396078)
+
+[sub_resource type="Theme" id="Theme_ehw4v"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,6 +16,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_1oke3")
 
 [node name="Panel" type="Panel" parent="."]
 z_index = 20
@@ -23,7 +27,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_6jhg2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.15
+anchor_right = 0.8
+anchor_bottom = 0.85
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Adams" type="TextureRect" parent="Panel/VBoxContainer"]
+z_index = 10
+custom_minimum_size = Vector2(0, 144)
+layout_mode = 2
+theme = SubResource("Theme_ehw4v")
+texture = ExtResource("1_fe774")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Mayor Mayhem"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_stretch_ratio = 0.0
+theme_override_font_sizes/font_size = 24
+text = " ▶️  Play"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(384, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = " ⚙️  Settings"
+alignment = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -32,36 +82,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_py7pn")
 expand_mode = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.3
-anchor_right = 0.7
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 24
-
-[node name="TextureRect2" type="TextureRect" parent="VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_fe774")
-stretch_mode = 5
-
-[node name="TitleLabel" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_u2s0j")
-theme_override_font_sizes/font_size = 42
-text = "Mayor Mayhem"
-horizontal_alignment = 1
-vertical_alignment = 1
-uppercase = true
-
-[node name="PlayButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Play"
-
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2

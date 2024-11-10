@@ -1,0 +1,77 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhagdnq4mq7uk"]
+
+[ext_resource type="Texture2D" uid="uid://bpfgtpbdon3ho" path="res://assets/images/map.png" id="1_b4us5"]
+[ext_resource type="Script" path="res://src/GameManager.cs" id="1_jfdys"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bsi43"]
+bg_color = Color(0.0999859, 0.099986, 0.099986, 0.831373)
+
+[sub_resource type="Theme" id="Theme_sfdgd"]
+Button/styles/normal = SubResource("StyleBoxFlat_bsi43")
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jfdys")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_b4us5")
+metadata/_edit_lock_ = true
+
+[node name="Districts" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpperManhattan" type="Button" parent="Districts"]
+layout_mode = 2
+offset_left = 306.0
+offset_top = 313.0
+offset_right = 444.0
+offset_bottom = 359.0
+theme = SubResource("Theme_sfdgd")
+text = "Upper Manhattan"
+
+[node name="Harlem" type="Button" parent="Districts"]
+layout_mode = 2
+offset_left = 406.0
+offset_top = 139.0
+offset_right = 544.0
+offset_bottom = 185.0
+theme = SubResource("Theme_sfdgd")
+text = "Harlem"
+
+[node name="Midtown" type="Button" parent="Districts"]
+layout_mode = 2
+offset_left = 201.0
+offset_top = 513.0
+offset_right = 339.0
+offset_bottom = 559.0
+theme = SubResource("Theme_sfdgd")
+text = "Midtown"
+
+[node name="LowerManhattan" type="Button" parent="Districts"]
+layout_mode = 2
+offset_left = 159.0
+offset_top = 693.0
+offset_right = 297.0
+offset_bottom = 739.0
+theme = SubResource("Theme_sfdgd")
+text = "Lower Manhattan"
+
+[node name="FinancialDistrict" type="Button" parent="Districts"]
+layout_mode = 2
+offset_left = 84.0
+offset_top = 853.0
+offset_right = 222.0
+offset_bottom = 899.0
+theme = SubResource("Theme_sfdgd")
+text = "Financial District"
