@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://colf7defuetxt"]
+[gd_scene load_steps=4 format=3 uid="uid://colf7defuetxt"]
 
 [ext_resource type="TileSet" uid="uid://ojca5epu4e50" path="res://assets/images/buildings.tres" id="1_li7pi"]
 [ext_resource type="Script" path="res://scenes/districts/District.cs" id="2_hdnly"]
+[ext_resource type="Resource" uid="uid://cwkuhs6pqm2vc" path="res://scenes/districts/MidtownResource.tres" id="2_ne1aq"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Midtown" type="Node2D"]
 script = ExtResource("2_hdnly")
+stats = ExtResource("2_ne1aq")
 
-[node name="Layer0" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 use_parent_material = true
 position = Vector2(12, 33)
-tile_map_data = PackedByteArray(0, 0, 252, 255, 253, 255, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 17, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 tile_set = ExtResource("1_li7pi")
+
+[node name="Camera2D" type="Camera2D" parent="."]

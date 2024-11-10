@@ -29,16 +29,19 @@ public partial class GameManager : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		this.budget = 100; // $100,000,000 by default
-		this.taxRate = 10; // 10% tax rate by default
-		this.level = 1; // Level 1
 
 		EnterDistrict();
 
+		/**
+		this.budget = 100; // $100,000,000 by default
+		this.taxRate = 10; // 10% tax rate by default
+		this.level = 1; // Level 1
+		
 		this.eventTimer = GetNode<Timer>("EventTimer");
 		this.levelTimer = GetNode<Timer>("LevelTimer");
 
 		StartLevel();
+		*/
 	}
 
 	public void StartLevel() {
@@ -90,9 +93,12 @@ public partial class GameManager : Node2D
 	public void SendEvent() {}
 
 	public void EnterDistrict() {
+		/**
 		District district = (District) ResourceLoader.Load<PackedScene>("res://scenes/districts/Harlem.tscn").Instantiate();
 		AddChild(district);
 		ToggleMap();
+		*/
+		GetTree().ChangeSceneToFile("res://scenes/districts/Midtown.tscn"); // Changing the scene to the Game scene.
 	}
 
 	public void ToggleMap() {
