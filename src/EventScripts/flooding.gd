@@ -30,3 +30,8 @@ func _ready() -> void:
 	self.get_child(4).text = str(money)
 	GlobalVars.money += money
 	GlobalVars.reputation += reputation
+
+
+func _on_OK_button_pressed() -> void:
+	self.get_parent().visible = false
+	self.get_parent().get_parent().queue_free()

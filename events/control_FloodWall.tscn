@@ -156,4 +156,4 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_r6irm")
 
-[connection signal="pressed" from="Background/ResultPopUp/ColorRect/OKbutton" to="Background" method="_on_OK_button_pressed"]
+[connection signal="pressed" from="Background/ResultPopUp/ColorRect/OKbutton" to="Background/ResultPopUp" method="_on_OK_button_pressed"]

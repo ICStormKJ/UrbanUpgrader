@@ -45,4 +45,5 @@ func _on_no_button_pressed() -> void:
 func _on_OK_button_pressed() -> void:
 	PopUp.visible = false
 	self.visible = false
+	self.get_parent().queue_free()
 	
