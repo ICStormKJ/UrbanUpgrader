@@ -1,0 +1,261 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpfoi3jabs2v3"]
+
+[ext_resource type="Script" path="res://Scripts/EventScripts/choiceManager.gd" id="1_gcw7x"]
+[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_f6ij5"]
+[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text.gd" id="3_uvytm"]
+
+[node name="TaxRaiseScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.207843)
+script = ExtResource("1_gcw7x")
+problemDescription = "It's time to decide on a new tax percent. We can use this opportunity to raise more funds for the future, or keep tax rates under control. Raise taxes?"
+
+[node name="ProblemBubble" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24603, 0.319914, 0.936601, 1)
+
+[node name="ProblemText" type="RichTextLabel" parent="Background/ProblemBubble"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 14.0
+offset_right = 291.0
+offset_bottom = 291.0
+theme_override_font_sizes/normal_font_size = 20
+text = "PROBLEM"
+fit_content = true
+
+[node name="YesOption" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = -78.5
+offset_right = 356.0
+offset_bottom = 78.5
+grow_vertical = 2
+color = Color(0.527709, 0.912154, 0, 1)
+
+[node name="YesText" type="RichTextLabel" parent="Background/YesOption"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -44.5
+offset_right = 69.0
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6ij5")
+theme_override_font_sizes/normal_font_size = 70
+text = "Yes
+"
+tab_size = 5
+
+[node name="YesButton" type="Button" parent="Background/YesOption"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6ij5")
+script = ExtResource("3_uvytm")
+outcomeDescription = "Raising taxes gets you additional funds, but many of the citizens seem to dislike the changes. "
+repValue = -15
+moneyValue = 5000000
+
+[node name="NoOption" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -78.5
+offset_right = -74.0
+offset_bottom = 78.5
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.842635, 3.56168e-06, 4.81307e-07, 1)
+
+[node name="NoText" type="RichTextLabel" parent="Background/NoOption"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -49.0
+offset_right = 81.0
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 70
+text = "No"
+tab_size = 5
+
+[node name="NoButton" type="Button" parent="Background/NoOption"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6ij5")
+script = ExtResource("3_uvytm")
+outcomeDescription = "Citizens are relieved that taxes have not been relieved, and they are satisfied. "
+repValue = 15
+
+[node name="ResultPopUp" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -231.0
+offset_right = 183.5
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.916831, 0.551977, 0, 1)
+
+[node name="OutcomeText" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 29.0
+offset_right = 163.0
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "DESCRIPTION"
+
+[node name="RepLabel" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 202.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Reputation"
+
+[node name="RepAmt" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 211.5
+offset_top = 9.0
+offset_right = 362.5
+offset_bottom = 64.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "AMT"
+
+[node name="MoneyLabel" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 88.0
+offset_right = 127.0
+offset_bottom = 136.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Money "
+
+[node name="MoneyAmt" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 211.5
+offset_top = 89.0
+offset_right = 362.5
+offset_bottom = 144.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "AMT"
+
+[node name="ColorRect" type="ColorRect" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -67.0
+offset_right = 60.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[node name="OK" type="RichTextLabel" parent="Background/ResultPopUp/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "OK"
+
+[node name="OKbutton" type="Button" parent="Background/ResultPopUp/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_f6ij5")
+
+[connection signal="pressed" from="Background/YesOption/YesButton" to="Background" method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Background/NoOption/NoButton" to="Background" method="_on_no_button_pressed"]
+[connection signal="pressed" from="Background/ResultPopUp/ColorRect/OKbutton" to="Background" method="_on_OK_button_pressed"]

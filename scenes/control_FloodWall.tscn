@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch4aago8pkqdx"]
+
+[ext_resource type="Script" path="res://Scripts/EventScripts/flooding.gd" id="1_0tdq1"]
+[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_r6irm"]
+
+[node name="FloodScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.207843)
+
+[node name="ResultPopUp" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.5
+offset_top = -231.0
+offset_right = 183.5
+offset_bottom = 231.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.916831, 0.551977, 0, 1)
+script = ExtResource("1_0tdq1")
+message = "A storm led to flooding across the city. "
+savedMessage = "Fortunately, with the flood walls you funded, none of the areas suffered major damage."
+reputationMultiplier = 5
+
+[node name="OutcomeText" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -162.0
+offset_top = 29.0
+offset_right = 163.0
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "A storm led to flooding across the city. "
+
+[node name="RepLabel" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 18.0
+offset_top = 8.0
+offset_right = 202.0
+offset_bottom = 63.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Reputation"
+
+[node name="RepAmt" type="RichTextLabel" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 211.5
+offset_top = 9.0
+offset_right = 362.5
+offset_bottom = 64.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "AMT"
+
+[node name="ColorRect" type="ColorRect" parent="Background/ResultPopUp"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -67.0
+offset_right = 60.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.61339, 0.61339, 0.61339, 1)
+
+[node name="OK" type="RichTextLabel" parent="Background/ResultPopUp/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "OK"
+
+[node name="OKbutton" type="Button" parent="Background/ResultPopUp/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_r6irm")
+
+[connection signal="pressed" from="Background/ResultPopUp/ColorRect/OKbutton" to="Background" method="_on_OK_button_pressed"]

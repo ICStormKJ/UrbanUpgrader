@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj4augyg7hwh1"]
+
+[ext_resource type="AudioStream" uid="uid://c3y56agt7yboy" path="res://Audio/industrial-city-distant-traffic-241050.mp3" id="1_dcn7h"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_dcn7h")
+autoplay = true

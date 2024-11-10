@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpfoi3jabs2v3"]
+[gd_scene load_steps=4 format=3 uid="uid://clqp6c2rnsdtb"]
 
-[ext_resource type="Script" path="res://Scripts/EventScripts/color_rect.gd" id="1_mym8b"]
-[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_183uj"]
-[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text.gd" id="3_mt4o7"]
+[ext_resource type="Script" path="res://Scripts/EventScripts/choiceManager.gd" id="1_sd0e5"]
+[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_rnnb3"]
+[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text.gd" id="3_dk7ew"]
 
-[node name="Control" type="Control"]
+[node name="EducationScene" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,15 +17,11 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = 1.0
-offset_right = -20.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.207843)
-script = ExtResource("1_mym8b")
-problemDescription = "It's time to decide on a new tax percent. We can use this opportunity to raise more funds for the future, or keep tax rates under control. Raise taxes?"
+script = ExtResource("1_sd0e5")
+problemDescription = "Schools in the district has reported several cases of run down infrastructure and sanitary problems. Will you increase the budget of schools to aid in repairs?"
 
 [node name="ProblemBubble" type="ColorRect" parent="Background"]
 layout_mode = 1
@@ -44,12 +40,13 @@ color = Color(0.24603, 0.319914, 0.936601, 1)
 
 [node name="ProblemText" type="RichTextLabel" parent="Background/ProblemBubble"]
 layout_mode = 0
-offset_left = 26.0
-offset_top = 44.0
-offset_right = 261.0
-offset_bottom = 253.0
+offset_left = 9.0
+offset_top = 14.0
+offset_right = 291.0
+offset_bottom = 291.0
 theme_override_font_sizes/normal_font_size = 20
 text = "PROBLEM"
+fit_content = true
 
 [node name="YesOption" type="ColorRect" parent="Background"]
 layout_mode = 1
@@ -76,7 +73,7 @@ offset_right = 69.0
 offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_183uj")
+theme = ExtResource("2_rnnb3")
 theme_override_font_sizes/normal_font_size = 70
 text = "Yes
 "
@@ -89,11 +86,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_183uj")
-script = ExtResource("3_mt4o7")
-outcomeDescription = "Raising taxes gets you additional funds, but many of the citizens seem to dislike the changes. "
-repValue = -15
-moneyValue = 5000000
+theme = ExtResource("2_rnnb3")
+script = ExtResource("3_dk7ew")
+outcomeDescription = "You give the schools an increased budget, and citizens applaud your dedication to improving education."
+repValue = 30
 
 [node name="NoOption" type="ColorRect" parent="Background"]
 layout_mode = 1
@@ -134,10 +130,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_183uj")
-script = ExtResource("3_mt4o7")
-outcomeDescription = "Citizens are relieved that taxes have not been relieved, and they are satisfied. "
-repValue = 15
+theme = ExtResource("2_rnnb3")
+script = ExtResource("3_dk7ew")
+outcomeDescription = "With the hefty price, you unfortunately decide not to give the schools more funding. The citizens, especially the students and staff, are disappointed."
+repValue = -15
 
 [node name="ResultPopUp" type="ColorRect" parent="Background"]
 layout_mode = 1
@@ -257,7 +253,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_183uj")
+theme = ExtResource("2_rnnb3")
 
 [connection signal="pressed" from="Background/YesOption/YesButton" to="Background" method="_on_yes_button_pressed"]
 [connection signal="pressed" from="Background/NoOption/NoButton" to="Background" method="_on_no_button_pressed"]

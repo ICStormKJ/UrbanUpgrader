@@ -17,6 +17,8 @@ func _ready() -> void:
 #Update information on the pop up with Yes_Data and make it visible
 func _on_yes_button_pressed() -> void:
 	PopUp.visible = true
+	No_Data.disabled = true
+	Yes_Data.disabled = true
 	PopUp.get_child(0).text = Yes_Data.outcomeDescription
 	PopUp.get_child(2).text = str(Yes_Data.repValue)
 	PopUp.get_child(4).text = str(Yes_Data.moneyValue)
@@ -24,6 +26,8 @@ func _on_yes_button_pressed() -> void:
 #Update information on the pop up with No_Data and make it visible
 func _on_no_button_pressed() -> void:
 	PopUp.visible = true
+	No_Data.disabled = true
+	Yes_Data.disabled = true
 	PopUp.get_child(0).text = No_Data.outcomeDescription
 	PopUp.get_child(2).text = str(No_Data.repValue)
 	PopUp.get_child(4).text = str(No_Data.moneyValue)
