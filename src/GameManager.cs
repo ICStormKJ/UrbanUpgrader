@@ -28,9 +28,10 @@ public partial class GameManager : Node2D
 		this.budget = 100; // $100,000,000 by default
 		this.taxRate = 10; // 10% tax rate by default
 		this.level = 1; // Level 1
-		Control control = GetNode<Control>("Map");
-		control.Visible = false;
-		this.EnterDistrict();
+	}
+
+	public void StartLevel() {
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,6 +52,8 @@ public partial class GameManager : Node2D
 		this.approval = totalApproval / totalPopulation;
 		this.budget += totalRevenue * taxRate;
 	}
+
+	public void SendEvent() {}
 
 	public void EnterDistrict() {
 		District test = ResourceLoader.Load<District>("res://scenes/districts/Harlem.tscn");
