@@ -1,0 +1,46 @@
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dckv50wkn8c2o"]
+
+[ext_resource type="Texture2D" uid="uid://bed1xmt2ir1ik" path="res://assets/images/smallBrownHouses.png" id="1_pqmxx"]
+[ext_resource type="Texture2D" uid="uid://cdhh840tc7t05" path="res://assets/images/bigBrownHouses.png" id="2_dmxcl"]
+[ext_resource type="Texture2D" uid="uid://vuojadlit8i8" path="res://assets/images/skyscraper1.png" id="3_5mgrt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gc2rc"]
+texture = ExtResource("1_pqmxx")
+texture_region_size = Vector2i(160, 240)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 60)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 60)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 60)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 60)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5ip0"]
+texture = ExtResource("2_dmxcl")
+texture_region_size = Vector2i(288, 424)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 106)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 106)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 106)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 106)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yndox"]
+texture = ExtResource("3_5mgrt")
+texture_region_size = Vector2i(464, 968)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 242)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 242)
+
+[resource]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 18)
+sources/0 = SubResource("TileSetAtlasSource_gc2rc")
+sources/2 = SubResource("TileSetAtlasSource_h5ip0")
+sources/3 = SubResource("TileSetAtlasSource_yndox")
