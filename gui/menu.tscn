@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt8dnfhaxg04y"]
+[gd_scene load_steps=7 format=3 uid="uid://dt8dnfhaxg04y"]
 
 [ext_resource type="Script" path="res://gui/Menu.cs" id="1_1oke3"]
 [ext_resource type="Texture2D" uid="uid://dtg0k0aap7tvp" path="res://assets/images/adams.png" id="1_fe774"]
 [ext_resource type="Texture2D" uid="uid://dfm2rubnhalrb" path="res://assets/images/menu_background.jpg" id="1_py7pn"]
+[ext_resource type="FontFile" uid="uid://dxdtm4ux6mxdp" path="res://gui/Prototype.ttf" id="3_jcw73"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6jhg2"]
 bg_color = Color(0.6, 0.6, 0.6, 0.396078)
@@ -52,6 +53,7 @@ stretch_mode = 5
 
 [node name="TitleLabel" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jcw73")
 theme_override_font_sizes/font_size = 42
 text = "Mayor Mayhem"
 horizontal_alignment = 1
@@ -63,6 +65,7 @@ custom_minimum_size = Vector2(384, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = ExtResource("3_jcw73")
 theme_override_font_sizes/font_size = 24
 text = " ▶️  Play"
 alignment = 0

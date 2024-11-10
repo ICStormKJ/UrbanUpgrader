@@ -29,26 +29,33 @@ public partial class GameManager : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		EnterDistrict();
-
 		this.budget = 100; // $100,000,000 by default
 		this.taxRate = 10; // 10% tax rate by default
 		this.level = 1; // Level 1
+
+		Node globalVars = GetTree().Root.GetNode<Node>("GlobalVars");
+		globalVars.Set("reputationPercent", this.approval);
+		globalVars.Set("money", this.budget);
 		
 		this.eventTimer = GetNode<Timer>("EventTimer");
 		this.levelTimer = GetNode<Timer>("LevelTimer");
 
-		StartLevel();
-	}
+		Button harlemButton = GetNode<Button>("Map/Districts/Harlem");
+		harlemButton.Pressed += EnterHarlem;
+		Button midtownButton = GetNode<Button>("Map/Districts/Midtown");
+		midtownButton.Pressed += EnterMidtown;
 
-	public void StartLevel() {
-		this.eventTimer.Start(180);
-		this.eventTimer.Timeout += EndLevel;
+		StartLevel();
 		StartEvent();
 	}
 
+	public void StartLevel() {
+		this.levelTimer.Start(180);
+		this.levelTimer.Timeout += EndLevel;
+	}
+
 	public void EndLevel() {
-		this.eventTimer.Stop();
+		this.levelTimer.Stop();
 
 		if (approval < 30.0) {
 			return;
@@ -65,26 +72,46 @@ public partial class GameManager : Node2D
 	}
 
 	public void EndEvent() {
+		RandomNumberGenerator random = new RandomNumberGenerator();
+		int randomNum = random.RandiRange(0, 3);
+		switch (randomNum) {
+			case 0:
+				Control education = (Control) ResourceLoader.Load<PackedScene>("res://events/control_Education.tscn").Instantiate();
+				AddChild(education);
+				break;
+			case 1:
+				Control flood = (Control) ResourceLoader.Load<PackedScene>("res://events/control_FloodWall.tscn").Instantiate();
+				AddChild(flood);
+				break;
+			case 2:
+				Control rich = (Control) ResourceLoader.Load<PackedScene>("res://events/control_RichGuy.tscn").Instantiate();
+				AddChild(rich);
+				break;		
+			case 3:
+				Control tax = (Control) ResourceLoader.Load<PackedScene>("res://events/control_Tax.tscn").Instantiate();
+				AddChild(tax);
+				break;	
+		}
 		StartEvent();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		/**
-		int totalPopulation = 0;
+		int totalPopulation = 1;
 		int totalRevenue = 0;
 		int totalApproval = 0;
 
+		/**
 		foreach (District district in this.districts.Values) {
 			totalPopulation += district.population;
 			totalRevenue += (int) (district.salary * district.population);
 			totalApproval += district.approval * district.population;
 		}
+		*/
 
 		this.approval = totalApproval / totalPopulation;
 		this.budget += totalRevenue * taxRate;
-		*/
 	}
 
 	public void SendEvent() {}
@@ -109,8 +136,8 @@ public partial class GameManager : Node2D
 
 	public void LeaveDistrict() {
 		ToggleMap();
-        RemoveChild(GetNode<District>(districtLoaded));
-    }
+		RemoveChild(GetNode<District>(districtLoaded));
+	}
 
 	public void ToggleMap() {
 		Control map = GetNode<Control>("Map");
