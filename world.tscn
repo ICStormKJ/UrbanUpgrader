@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dt7gnp6hm1clo"]
 
 [ext_resource type="Script" path="res://src/GameManager.cs" id="1_dyp64"]
-[ext_resource type="PackedScene" path="res://gui/map.tscn" id="2_i1y51"]
+[ext_resource type="PackedScene" uid="uid://bsyyqwqujxc5a" path="res://gui/map.tscn" id="2_i1y51"]
 [ext_resource type="AudioStream" uid="uid://dbhxvtbch8c1s" path="res://assets/audio/city_sounds.mp3" id="3_06fx7"]
 
 [node name="World" type="Node2D"]
