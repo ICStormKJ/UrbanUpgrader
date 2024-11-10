@@ -7,7 +7,5 @@ public partial class District : Node2D
 
 	public override void _Ready()
 	{
-		Control panel = ResourceLoader.Load<PackedScene>("res://gui/DistrictPanel.tscn").Instantiate<Control>();
-		AddChild(panel);
 	}
 }

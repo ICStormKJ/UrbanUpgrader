@@ -23,7 +23,7 @@ public partial class Menu : Control
 	
 	// When play button is pressed.
 	public void PlayPressed() {
-		GetTree().ChangeSceneToFile("res://scenes/districts/Harlem.tscn"); // Changing the scene to the Game scene.
+		GetTree().ChangeSceneToFile("res://world.tscn"); // Changing the scene to the Game scene.
 	}
 
 	public void SettingsPressed() {

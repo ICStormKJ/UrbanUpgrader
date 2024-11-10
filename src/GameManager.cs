@@ -24,15 +24,13 @@ public partial class GameManager : Node2D
 	public Godot.Timer levelTimer;
 
 	// District currently loaded.
-	public District districts;
+	public String districtLoaded;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
 		EnterDistrict();
 
-		/**
 		this.budget = 100; // $100,000,000 by default
 		this.taxRate = 10; // 10% tax rate by default
 		this.level = 1; // Level 1
@@ -41,7 +39,6 @@ public partial class GameManager : Node2D
 		this.levelTimer = GetNode<Timer>("LevelTimer");
 
 		StartLevel();
-		*/
 	}
 
 	public void StartLevel() {
@@ -92,14 +89,28 @@ public partial class GameManager : Node2D
 
 	public void SendEvent() {}
 
-	public void EnterDistrict() {
-		/**
+	public void EnterHarlem() {
 		District district = (District) ResourceLoader.Load<PackedScene>("res://scenes/districts/Harlem.tscn").Instantiate();
-		AddChild(district);
+		AddChild(district); 
+		districtLoaded = "Harlem";
+		Button returnButton = GetNode<Button>("Harlem/District/Button");
+		returnButton.Pressed += LeaveDistrict;
 		ToggleMap();
-		*/
-		GetTree().ChangeSceneToFile("res://scenes/districts/Midtown.tscn"); // Changing the scene to the Game scene.
 	}
+
+	public void EnterMidtown() {
+		District district = (District) ResourceLoader.Load<PackedScene>("res://scenes/districts/Midtown.tscn").Instantiate();
+		AddChild(district); 
+		districtLoaded = "Midtown";
+		Button returnButton = GetNode<Button>("Midtown/District/Button");
+		returnButton.Pressed += LeaveDistrict;
+		ToggleMap();
+	}
+
+	public void LeaveDistrict() {
+		ToggleMap();
+        RemoveChild(GetNode<District>(districtLoaded));
+    }
 
 	public void ToggleMap() {
 		Control map = GetNode<Control>("Map");

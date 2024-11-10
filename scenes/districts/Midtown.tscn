@@ -1,12 +1,16 @@
-[gd_scene load_steps=4 format=4 uid="uid://colf7defuetxt"]
+[gd_scene load_steps=5 format=4 uid="uid://colf7defuetxt"]
 
-[ext_resource type="TileSet" uid="uid://dckv50wkn8c2o" path="res://assets/images/buildings.tres" id="1_li7pi"]
+[ext_resource type="TileSet" uid="uid://ojca5epu4e50" path="res://assets/images/buildings.tres" id="1_li7pi"]
 [ext_resource type="Script" path="res://scenes/districts/District.cs" id="2_hdnly"]
-[ext_resource type="Resource" path="res://scenes/districts/MidtownResource.tres" id="2_ne1aq"]
+[ext_resource type="Resource" uid="uid://cwkuhs6pqm2vc" path="res://scenes/districts/MidtownResource.tres" id="2_ne1aq"]
+[ext_resource type="PackedScene" uid="uid://bjbda8w5kb83j" path="res://gui/district_panel.tscn" id="3_5mfub"]
 
 [node name="Midtown" type="Node2D"]
 script = ExtResource("2_hdnly")
 stats = ExtResource("2_ne1aq")
+
+[node name="District" parent="." instance=ExtResource("3_5mfub")]
+top_level = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
