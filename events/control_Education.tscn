@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://clqp6c2rnsdtb"]
+[gd_scene load_steps=5 format=3 uid="uid://clqp6c2rnsdtb"]
 
 [ext_resource type="Script" path="res://src/EventScripts/choiceManager.gd" id="1_sd0e5"]
+[ext_resource type="FontFile" uid="uid://dxdtm4ux6mxdp" path="res://gui/Prototype.ttf" id="2_e4tjj"]
 [ext_resource type="Theme" uid="uid://d0emavip1faky" path="res://new_theme.tres" id="2_qyd0r"]
 [ext_resource type="Script" path="res://src/EventScripts/outcome_text.gd" id="3_dk7ew"]
 
@@ -44,6 +45,7 @@ offset_left = 9.0
 offset_top = 14.0
 offset_right = 291.0
 offset_bottom = 291.0
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 20
 text = "PROBLEM"
 fit_content = true
@@ -73,6 +75,7 @@ offset_right = 69.0
 offset_bottom = 52.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 70
 text = "Yes
 "
@@ -119,6 +122,7 @@ offset_right = 81.0
 offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 70
 text = "No"
 tab_size = 5
@@ -160,6 +164,7 @@ offset_top = 29.0
 offset_right = 163.0
 offset_bottom = 199.0
 grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 20
 text = "DESCRIPTION"
 
@@ -173,6 +178,7 @@ offset_top = 8.0
 offset_right = 202.0
 offset_bottom = 63.0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 30
 text = "Reputation"
 
@@ -186,7 +192,8 @@ offset_top = 9.0
 offset_right = 362.5
 offset_bottom = 64.0
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
+theme_override_font_sizes/normal_font_size = 25
 text = "AMT"
 
 [node name="MoneyLabel" type="RichTextLabel" parent="Background/ResultPopUp"]
@@ -199,6 +206,7 @@ offset_top = 88.0
 offset_right = 127.0
 offset_bottom = 136.0
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 30
 text = "Money "
 
@@ -212,7 +220,8 @@ offset_top = 89.0
 offset_right = 362.5
 offset_bottom = 144.0
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 30
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
+theme_override_font_sizes/normal_font_size = 25
 text = "AMT"
 
 [node name="ColorRect" type="ColorRect" parent="Background/ResultPopUp"]
@@ -243,6 +252,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e4tjj")
 theme_override_font_sizes/normal_font_size = 25
 text = "OK"
 
