@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://g4jruah2sq4"]
+[gd_scene load_steps=6 format=4 uid="uid://c2cqeos4h4rd5"]
 
-[ext_resource type="TileSet" uid="uid://dckv50wkn8c2o" path="res://assets/images/buildings.tres" id="1_psl8h"]
-[ext_resource type="Resource" path="res://scenes/districts/HarlemResource.tres" id="2_gvwod"]
+[ext_resource type="TileSet" uid="uid://ojca5epu4e50" path="res://assets/images/buildings.tres" id="1_psl8h"]
+[ext_resource type="Resource" uid="uid://by8juiimmws1o" path="res://scenes/districts/HarlemResource.tres" id="2_gvwod"]
+[ext_resource type="PackedScene" uid="uid://bjbda8w5kb83j" path="res://gui/DistrictPanel.tscn" id="3_pnni7"]
 [ext_resource type="Texture2D" uid="uid://hql5xv51ckx4" path="res://assets/images/bk.png" id="4_dsmfu"]
 [ext_resource type="Script" path="res://scenes/districts/District.cs" id="4_j6f8q"]
 
@@ -9,6 +10,9 @@
 y_sort_enabled = true
 script = ExtResource("4_j6f8q")
 stats = ExtResource("2_gvwod")
+
+[node name="District" parent="." instance=ExtResource("3_pnni7")]
+top_level = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 y_sort_enabled = true
