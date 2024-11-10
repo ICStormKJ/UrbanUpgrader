@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dutcn5cryoqd8"]
 
-[ext_resource type="Script" path="res://Scripts/EventScripts/choiceManager.gd" id="1_31msr"]
-[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_q8q3b"]
-[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text_random.gd" id="3_rfsbj"]
-[ext_resource type="Script" path="res://Scripts/EventScripts/outcome_text.gd" id="3_ygmej"]
+[ext_resource type="Script" path="res://src/EventScripts/choiceManager.gd" id="1_31msr"]
+[ext_resource type="Theme" path="res://new_theme.tres" id="2_q8q3b"]
+[ext_resource type="Script" path="res://src/EventScripts/outcome_text_random.gd" id="3_rfsbj"]
+[ext_resource type="Script" path="res://src/EventScripts/outcome_text.gd" id="3_ygmej"]
 
 [node name="RichGuyScene" type="Control"]
 layout_mode = 3

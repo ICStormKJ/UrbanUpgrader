@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DistrictResource" load_steps=2 format=3 uid="uid://by8juiimmws1o"]
+
+[ext_resource type="Script" path="res://scenes/districts/DistrictResource.cs" id="1_bhn6s"]
+
+[resource]
+script = ExtResource("1_bhn6s")
+approval = 50
+population = 372
+salary = 0.05
+floodWallLevel = 0

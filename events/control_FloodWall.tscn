@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch4aago8pkqdx"]
 
-[ext_resource type="Script" path="res://Scripts/EventScripts/flooding.gd" id="1_0tdq1"]
-[ext_resource type="Theme" uid="uid://b4bqd0urryls" path="res://new_theme.tres" id="2_r6irm"]
+[ext_resource type="Script" path="res://src/EventScripts/flooding.gd" id="1_0tdq1"]
+[ext_resource type="Theme" path="res://new_theme.tres" id="2_r6irm"]
 
 [node name="FloodScene" type="Control"]
 layout_mode = 3
