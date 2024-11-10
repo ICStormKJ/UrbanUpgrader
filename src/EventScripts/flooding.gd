@@ -25,6 +25,8 @@ func _ready() -> void:
 		reputation = 30
 		money = 0
 	self.get_child(0).text = message
-	#update the reputation based on how many areas took damage
+	#update the reputation and global vars based on how many areas took damage
 	self.get_child(2).text = str(reputation)
 	self.get_child(4).text = str(money)
+	GlobalVars.money += money
+	GlobalVars.reputation += reputation
